@@ -21,7 +21,7 @@ class Main extends CI_Controller {
 	private function create_admin()
 	{
 		$data['u_nama'] = "admin";
-		$data['u_password'] = password_hash("admin", true);
+		$data['u_password'] = password_hash('admin', PASSWORD_DEFAULT);
 		$data['u_created'] = date('Y-m-d H:i:s');
 		$this->tooling_model->create_admin($data);
 	}

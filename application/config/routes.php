@@ -55,5 +55,5 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['dashboard'] = 'main/index';
 $route['login'] = 'login/login';
+$route['check_credential'] = 'login/submit';
 $route['lemari/(:any)'] = 'main/toolbox/$1';
-$route['method/(:any)/(:any)'] = 'controller/method/$1/$2';
