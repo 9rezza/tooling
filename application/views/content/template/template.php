@@ -3,21 +3,21 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="#">
+  <link rel="icon" type="image/png" href="#">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Paper Dashboard 2 by Creative Tim
+    <?= $title ?>
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css?<?=rand()?>" rel="stylesheet">
   <!-- CSS Files -->
-  <link href="<?=base_url()?>/assets/paper/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="<?=base_url()?>/assets/paper/css/paper-dashboard.css?v=2.0.0" rel="stylesheet" />
+  <link href="<?=base_url()?>assets/paper/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="<?=base_url()?>assets/paper/css/paper-dashboard.css?v=2.0.0&&<?=rand()?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
-  <link href="<?=base_url()?>/assets/paper/demo/demo.css" rel="stylesheet" />
+  <link href="<?=base_url()?>assets/paper/demo/demo.css?<?=rand()?>" rel="stylesheet" />
   <style type="text/css">
     .sub-menu{
       margin-left: 10%;
@@ -34,7 +34,7 @@
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text logo-mini">
           <div class="logo-image-small">
-            <img src="../assets/img/logo-small.png">
+            <img src="#" hidden="">
           </div>
         </a>
         <a href="http://www.creative-tim.com" class="simple-text logo-normal">
@@ -52,69 +52,32 @@
               <p>Dashboard</p>
             </a>
           </li>
-          <li>
-            <a href="./icons.html">
-              <i class="nc-icon nc-settings"></i>
-              <p>Lemari</p>
-            </a>
-          </li>
 
           <li>
             <a data-toggle="collapse" href="#componentsExamples" class="collapsed" aria-expanded="false">
-              <i class="nc-icon nc-bank"></i>
-              <p>Components
+              <i class="nc-icon nc-settings"></i>
+              <p>Lemari
                 <b class="caret"></b>
-             </p>
-           </a>
-           <div class="collapse" id="componentsExamples" aria-expanded="false" style="height: 0px;">
-            <ul class="nav">
-          <li class="sub-menu">
-            <a href="./icons.html">
-              <i class="nc-icon nc-settings"></i>
-              <p>Lemari</p>
+              </p>
             </a>
-          </li>
-          <li class="sub-menu">
-            <a href="./icons.html">
-              <i class="nc-icon nc-settings"></i>
-              <p>Lemari</p>
-            </a>
-          </li>             
-            </ul>
-          </div>
-        </li>
-
-
-        <li>
-          <a href="./notifications.html">
-            <i class="nc-icon nc-bell-55"></i>
-              <p>Notifications</p>
-            </a>
-          </li>
-          <li>
-            <a href="./user.html">
-              <i class="nc-icon nc-single-02"></i>
-              <p>User Profile</p>
-            </a>
-          </li>
-          <li>
-            <a href="./tables.html">
-              <i class="nc-icon nc-tile-56"></i>
-              <p>Table List</p>
-            </a>
-          </li>
-          <li>
-            <a href="./typography.html">
-              <i class="nc-icon nc-caps-small"></i>
-              <p>Typography</p>
-            </a>
-          </li>
-          <li class="active-pro">
-            <a href="./upgrade.html">
-              <i class="nc-icon nc-spaceship"></i>
-              <p>Upgrade to PRO</p>
-            </a>
-          </li>
+            <div class="collapse" id="componentsExamples" aria-expanded="false" style="height: 0px;">
+              <ul class="nav">
+                <li class="sub-menu">
+                  <a href="./icons.html">
+                    <i class="nc-icon nc-settings"></i>
+                    <p>Lemari</p>
+                  </a>
+                </li>
+                <li class="sub-menu">
+                  <a href="./icons.html">
+                    <i class="nc-icon nc-settings"></i>
+                    <p>Lemari</p>
+                  </a>
+                </li>             
+              </ul>
+            </div>
+          </li>        
+          
         </ul>
       </div>
     </div>
@@ -223,20 +186,18 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="<?=base_url()?>/assets/paper/js/core/jquery.min.js"></script>
-  <script src="<?=base_url()?>/assets/paper/js/core/popper.min.js"></script>
-  <script src="<?=base_url()?>/assets/paper/js/core/bootstrap.min.js"></script>
-  <script src="<?=base_url()?>/assets/paper/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-  <!--  Google Maps Plugin    -->
-  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+  <script src="<?=base_url()?>assets/paper/js/core/jquery.min.js"></script>
+  <script src="<?=base_url()?>assets/paper/js/core/popper.min.js"></script>
+  <script src="<?=base_url()?>assets/paper/js/core/bootstrap.min.js"></script>
+  <script src="<?=base_url()?>assets/paper/js/plugins/perfect-scrollbar.jquery.min.js"></script>
   <!-- Chart JS -->
-  <script src="<?=base_url()?>/assets/paper/js/plugins/chartjs.min.js"></script>
+  <script src="<?=base_url()?>assets/paper/js/plugins/chartjs.min.js"></script>
   <!--  Notifications Plugin    -->
-  <script src="<?=base_url()?>/assets/paper/js/plugins/bootstrap-notify.js"></script>
+  <script src="<?=base_url()?>assets/paper/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="<?=base_url()?>/assets/paper/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
+  <script src="<?=base_url()?>assets/paper/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-  <script src="<?=base_url()?>/assets/paper/demo/demo.js"></script>
+  <script src="<?=base_url()?>assets/paper/demo/demo.js"></script>
   <script>
     $(document).ready(function() {
       // Javascript method's body can be found in assets/assets-for-demo/js/demo.js

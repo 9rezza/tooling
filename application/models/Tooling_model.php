@@ -11,6 +11,14 @@ class Tooling_model extends CI_Model {
 		return $this->db->get();
 	}
 
+	public function tools($bid)
+	{
+		$this->db->select('*');
+		$this->db->from('tools');
+		$this->db->where('b_id', $bid);
+		return $this->db->get();
+	}
+
 	public function create_admin ($data)
 	{
 		$this->db->insert('users', $data);

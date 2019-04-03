@@ -10,6 +10,7 @@ class Template {
 	function display($template,$data=null)
 	{
 		$data['_content']=$this->_ci->load->view($template,$data, true);
+		
 		$this->_ci->load->view('content/template/template.php',$data);
 	}
 }

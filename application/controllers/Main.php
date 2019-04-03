@@ -15,7 +15,7 @@ class Main extends CI_Controller {
 
 	public function index()
 	{
-		$data['tittle'] = "Tooling - Dashboard";
+		$data['title'] = "Tooling - Dashboard";
 		//$this->load->view('content/dashboard',$data);
 		$this->template->display('content/dashboard', $data);
 	}
@@ -32,7 +32,13 @@ class Main extends CI_Controller {
 	{
 		$data['lemari'] = $this->tooling_model->toolbox($id)->row();
 		$data['title'] = 'Tooling - ' . $data['lemari']->b_nama;
-		$this->load->view('content/toolbox',$data);
+
+		$bid = $data['lemari']->b_id;
+		$data['alat'] = $this->tooling_model->tools($bid)->result();
+		$data['jml_alat'] = $this->tooling_model->tools($bid)->num_rows();
+
+
+		$this->template->display('content/toolbox', $data);
 	}
 
 
