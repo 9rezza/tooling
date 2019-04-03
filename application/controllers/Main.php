@@ -10,12 +10,14 @@ class Main extends CI_Controller {
 		$this->load->helper('url');
 		$this->load->database();
 		$this->load->model('tooling_model');
+		$this->load->library('template');
 	}
 
 	public function index()
 	{
 		$data['tittle'] = "Tooling - Dashboard";
-		$this->load->view('content/dashboard',$data);
+		//$this->load->view('content/dashboard',$data);
+		$this->template->display('content/dashboard', $data);
 	}
 
 	private function create_admin()
