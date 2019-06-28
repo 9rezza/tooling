@@ -9,7 +9,6 @@
         <title><?=$tittle?></title>
 
         <!-- CSS -->
-        <link rel="stylesheet" href="<?=base_url()?>http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
         <link rel="stylesheet" href="<?=base_url()?>assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css">
 		<link rel="stylesheet" href="<?=base_url()?>assets/css/form-elements.css">
@@ -39,9 +38,9 @@
             <div class="inner-bg">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-6 text hidden-sm hidden-xs">
-                            <h1><strong>Bootstrap</strong> Login Form</h1>
-                            <div class="description">
+                        <div class="col-sm-6 text">
+                            <h1><strong>TMMIN</strong> Tooling Application</h1>
+                            <div class="description" hidden>
                             	<p>
 	                            	This is a free responsive login form made with Bootstrap. 
 	                            	Download it on <a href="http://azmind.com"><strong>AZMIND</strong></a>, customize and use it as you like!
@@ -81,7 +80,7 @@
         <!-- Javascript -->
         <script src="<?=base_url()?>assets/js/jquery-1.11.1.min.js"></script>
         <script src="<?=base_url()?>assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+        <script src="<?=base_url()?>assets/js/jquery.backstretch.min.js"></script>
         <script src="<?=base_url()?>assets/js/scripts.js">
         </script>
         <script type="text/javascript">            

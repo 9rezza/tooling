@@ -7,7 +7,7 @@ class Login_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('users');
-		$this->db->where('u_nama', $username);
+		$this->db->where('u_username', $username);
 		return $this->db->get();
 	}
 

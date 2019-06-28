@@ -36,9 +36,16 @@ class Login extends CI_Controller {
         	//set session
             $array_items = get_object_vars($user_check);            
             $this->session->set_userdata($array_items);
+			//print_r($this->session->userdata());
             redirect(site_url('dashboard'));
         } else {
             redirect(site_url('login'));
         }
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+        redirect(site_url('login'));
 	}
 }

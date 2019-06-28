@@ -1,14 +1,38 @@
+
+<style type="text/css">
+  .listLemari {
+    margin-left: 20px
+  }
+  .listLemari a {
+    text-decoration:none; 
+    color:grey;
+  }
+  .listLemari a:hover {
+    text-decoration:none; 
+    color:black;
+  }
+</style>
 <div class="row">
   <div class="col-md-6">
     <div class="card ">
       <div class="card-header ">
-        <h5 class="card-title">Email Statistics</h5>
+        <h5 class="card-title">Pilih Lemari</h5>
       </div>
-      <div class="card-body ">
-        <canvas id="chartEmail">adasfas</canvas>
+      <div class="card-body">
+        <div class="relbox">
+          <ul class="nav">
+          <?php
+            foreach ($list_lemari as $l) {
+              ?>
+              <li class="listLemari"><a href="<?=base_url('lemari/'.$l->b_id)?>"><h5><i class="nc-icon nc-settings"></i> <?=$l->b_nama?></h5></a></li>
+          <?php
+            }
+          ?>            
+          </ul>
+        </div>
       </div>
-      <div class="card-footer ">
-        <div class="legend">
+      <div class="card-footer">
+        <div class="legend" style="display: none">
           <i class="fa fa-circle text-primary"></i> Opened
           <i class="fa fa-circle text-warning"></i> Read
           <i class="fa fa-circle text-danger"></i> Deleted
@@ -16,13 +40,13 @@
         </div>
         <hr>
         <div class="stats">
-          <i class="fa fa-calendar"></i> Number of emails sent
+          <i class="fa fa-circle"></i> Pilih lemari untuk diakses
         </div>
       </div>
     </div>
   </div>
   <div class="col-md-6">
-    <div class="card card-chart">
+    <div class="card card-chart" style="display: none;">
       <div class="card-header">
         <h5 class="card-title">NASDAQ: AAPL</h5>
         <p class="card-category">Line Chart with Points</p>
@@ -43,3 +67,5 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery-3.3.1.min.js"></script>

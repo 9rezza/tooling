@@ -11,10 +11,12 @@
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css?<?=rand()?>" rel="stylesheet">
+  <link href="<?=base_url()?>assets/css/googleapis-montserrat.css" rel="stylesheet" />
+  <link href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <!-- CSS Files -->
   <link href="<?=base_url()?>assets/paper/css/bootstrap.min.css" rel="stylesheet" />
+
+
   <link href="<?=base_url()?>assets/paper/css/paper-dashboard.css?v=2.0.0&&<?=rand()?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?=base_url()?>assets/paper/demo/demo.css?<?=rand()?>" rel="stylesheet" />
@@ -32,58 +34,71 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
       <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-mini">
+        <a href="#" class="simple-text logo-mini">
           <div class="logo-image-small">
             <img src="#" hidden="">
           </div>
         </a>
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-          Creative Tim
+        <a href="<?=base_url()?>" class="simple-text logo-normal">
+          TMMIN Tooling
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
         </a>
       </div>
+      <div class="logo text-center">
+        <a href="#" id="dummy" class="simple-text logo-normal">
+          <i class="nc-icon nc-single-02"></i>
+          <?=$this->session->userdata('u_nama')?> | <i class="btn btn-danger nc-icon nc-button-power" id="logout"></i>
+        </a>
+      </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="active ">
-            <a href="./dashboard.html">
+          <li class="<?=$nav[0]?>">
+            <a href="<?=base_url('dashboard')?>">
               <i class="nc-icon nc-bank"></i>
               <p>Dashboard</p>
             </a>
           </li>
 
-          <li>
-            <a data-toggle="collapse" href="#componentsExamples" class="collapsed" aria-expanded="false">
+          <li class="<?=$nav[1]?>">
+            <a href="#" aria-expanded="true">
               <i class="nc-icon nc-settings"></i>
               <p>Lemari
-                <b class="caret"></b>
               </p>
             </a>
-            <div class="collapse" id="componentsExamples" aria-expanded="false" style="height: 0px;">
+            <div class="collapse show" id="componentsExamples" aria-expanded="true">
               <ul class="nav">
-                <li class="sub-menu">
-                  <a href="./icons.html">
-                    <i class="nc-icon nc-settings"></i>
-                    <p>Lemari</p>
-                  </a>
-                </li>
-                <li class="sub-menu">
-                  <a href="./icons.html">
-                    <i class="nc-icon nc-settings"></i>
-                    <p>Lemari</p>
-                  </a>
-                </li>             
+                <?php foreach ($list_lemari as $all) { ?>
+                  <li class="sub-menu">
+                    <a href="<?=base_url('lemari/'.$all->b_id)?>">
+                      <i class="nc-icon nc-settings"></i>
+                      <p><?=$all->b_nama?></p>
+                    </a>
+                  </li>
+                <?php } ?>             
               </ul>
             </div>
-          </li>        
+          </li>
+
+          <?php if($this->session->userdata('u_username') == 'admin'){?>
+          <li class="<?=$nav[2]?>">
+            <a href="<?=base_url('users')?>">
+              <i class="nc-icon nc-circle-10"></i>
+              <p>User Management</p>
+            </a>
+          </li>
+          <?php }?>
+
+          <li class="active-pro hidden">
+          </li>
           
         </ul>
       </div>
     </div>
     <div class="main-panel">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent" style="position: fixed; background-color: #f4f3ef !important">
         <div class="container-fluid">
           <div class="navbar-wrapper">
             <div class="navbar-toggle">
@@ -93,14 +108,14 @@
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="#pablo">Paper Dashboard 2</a>
+            <a class="navbar-brand" href="#pablo"><?= $title ?></a>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation" style="display: none">
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
+          <div class="collapse navbar-collapse justify-content-end hidden" id="navigation" style="display: none !important">
             <form>
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
@@ -159,25 +174,15 @@
       <footer class="footer footer-black  footer-white ">
         <div class="container-fluid">
           <div class="row">
-            <nav class="footer-nav">
-              <ul>
-                <li>
-                  <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>
-                </li>
-                <li>
-                  <a href="http://blog.creative-tim.com/" target="_blank">Blog</a>
-                </li>
-                <li>
-                  <a href="https://www.creative-tim.com/license" target="_blank">Licenses</a>
-                </li>
-              </ul>
+            <nav class="footer-nav">            
+            <a href="http://daiichimandiri.com" style="color: black">              
+              <img src="<?=base_url('assets/img/logo.png?'.rand())?>" height="30" style="display= inline-block">
+              PT. Daiichi Mandiri
+            </a>
             </nav>
-            <div class="credits ml-auto">
+            <div class="credits ml-auto" style="margin-top: 5px">
               <span class="copyright">
-                ©
-                <script>
-                  document.write(new Date().getFullYear())
-                </script>, made with <i class="fa fa-heart heart"></i> by Creative Tim
+                © Template by Creative Tim
               </span>
             </div>
           </div>
@@ -186,7 +191,6 @@
     </div>
   </div>
   <!--   Core JS Files   -->
-  <script src="<?=base_url()?>assets/paper/js/core/jquery.min.js"></script>
   <script src="<?=base_url()?>assets/paper/js/core/popper.min.js"></script>
   <script src="<?=base_url()?>assets/paper/js/core/bootstrap.min.js"></script>
   <script src="<?=base_url()?>assets/paper/js/plugins/perfect-scrollbar.jquery.min.js"></script>
@@ -198,10 +202,12 @@
   <script src="<?=base_url()?>assets/paper/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="<?=base_url()?>assets/paper/demo/demo.js"></script>
-  <script>
-    $(document).ready(function() {
-      // Javascript method's body can be found in assets/assets-for-demo/js/demo.js
-      demo.initChartsPages();
+  <script type="text/javascript">
+    $('#logout').click(function(event) {
+      window.location.replace('<?=base_url("logout")?>');
+    });
+    $('#dummy').click(function(event) {
+      event.preventDefault();
     });
   </script>
 </body>
