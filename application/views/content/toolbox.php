@@ -306,7 +306,6 @@
 </div>
 
 
-<script type="text/javascript" src="<?php echo base_url()?>assets/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo base_url().'assets/datatables/js/jquery.datatables.min.js?123'?>"></script>
 <script src="<?php echo base_url().'assets/datatables/js/dataTables.responsive.min.js'?>"></script>
 <script src="<?php echo base_url().'assets/datatables/js/dataTables.rowReorder.min.js'?>"></script>
@@ -325,6 +324,7 @@
 <script src="<?php echo base_url().'assets/table2excel/jquery.table2excel.js'?>"></script>
 
 <script type="text/javascript">
+
   $( document ).ready(function() {
     // Setup datatables
     $.fn.dataTableExt.oApi.fnPagingInfo = function(oSettings)

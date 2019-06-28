@@ -20,6 +20,10 @@
   <link href="<?=base_url()?>assets/paper/css/paper-dashboard.css?v=2.0.0&&<?=rand()?>" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?=base_url()?>assets/paper/demo/demo.css?<?=rand()?>" rel="stylesheet" />
+
+  
+  <script src="<?=base_url()?>assets/js/jquery-3.3.1.min.js"></script>
+  <script src="<?=base_url()?>vendor/blockui/jquery.blockUI.js"></script>
   <style type="text/css">
     .sub-menu{
       margin-left: 10%;
@@ -27,9 +31,14 @@
   </style>
 </head>
 
-<body class="">
-  <div class="wrapper ">
-    <div class="sidebar" data-color="white" data-active-color="danger">
+
+<body>
+  <script type="text/javascript">
+    $('body').hide();
+    // $.blockUI();
+  </script>
+  <div class="wrapper">
+    <div class="sidebar" data-color="yellow" data-active-color="danger">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
@@ -202,14 +211,30 @@
   <script src="<?=base_url()?>assets/paper/js/paper-dashboard.min.js?v=2.0.0" type="text/javascript"></script>
   <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
   <script src="<?=base_url()?>assets/paper/demo/demo.js"></script>
-  <script type="text/javascript">
-    $('#logout').click(function(event) {
-      window.location.replace('<?=base_url("logout")?>');
-    });
-    $('#dummy').click(function(event) {
-      event.preventDefault();
-    });
-  </script>
+  
+
+<script type="text/javascript">
+  $('#logout').click(function(event) {
+    window.location.replace('<?=base_url("logout")?>');
+  });
+  $('#dummy').click(function(event) {
+    event.preventDefault();
+  });
+
+  $('body').show();
+  // $.unblockUI();
+
+    // $(window).on("load", function() {
+    //   // $('body').hide();
+    //   alert('a');
+    // });
+
+    // $(document).ready(function() {
+    //   // $('body').show();
+    //   alert('b');
+    // });
+
+</script>
 </body>
 
 </html>
